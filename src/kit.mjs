@@ -513,16 +513,24 @@ ${script}`.replace(/\n{2,}/g, "\n");
       </details>`;
   }
 
-  // 系譜：PolyLinga → ことのあめ → 姉妹（作った順）。
+  // 系譜：初代の試作 Poly-Lang → PolyLinga → ことのあめ → 姉妹（作った順）。
+  // 主な作品でない段（Poly-Lang）は、アイコンの代わりに点線の枠と字で描き、外（GitHub）へつなぐ。
   const language = C.groups.find((g) => g.id === "language");
+  const lnMeta = (s) => `<span class="ln-meta"><span class="period">${esc(s.date)}</span> ${esc(tx(s.role))}</span>`;
   const lineage = `<nav class="lineage" aria-labelledby="${language.id}-h">
           <ol>
             ${language.lineage.steps
               .map((s, i) => {
+                const cls = `ln ln-${i}${s.sister ? " ln-sister" : ""}`;
+                if (!s.work) {
+                  return `<li class="${cls} ln-proto"><a href="${esc(s.href)}" target="_blank" rel="noopener"><span class="app-icon ln-mark" aria-hidden="true">${esc(
+                    s.mark
+                  )}</span><span class="ln-text"><span class="ln-name">${esc(s.name)}${ICON.arrow}</span>${lnMeta(s)}</span><span class="sr-only">${esc(tx(C.ui.external))}</span></a></li>`;
+                }
                 const w = C.works[s.work];
-                return `<li class="ln ln-${i}${i >= 2 ? " ln-sister" : ""}"><a href="${workHref(s.work)}">${iconImg(w.icon, 52)}<span class="ln-text"><span class="ln-name${
+                return `<li class="${cls}"><a href="${workHref(s.work)}">${iconImg(w.icon, 52)}<span class="ln-text"><span class="ln-name${
                   w.wordmark ? " wordmark" : ""
-                }"${nameAttr(w)}>${esc(w.name)}</span><span class="ln-meta"><span class="period">${esc(s.date)}</span> ${esc(tx(s.role))}</span></span></a></li>`;
+                }"${nameAttr(w)}>${esc(w.name)}</span>${lnMeta(s)}</span></a></li>`;
               })
               .join("\n            ")}
           </ol>

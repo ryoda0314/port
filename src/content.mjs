@@ -134,13 +134,14 @@ export const groups = [
     lineage: {
       steps: [
         // 日付は作り始めた日（日本時間）。各フォルダで最初に作り始めた会話と、git の最初のコミットから。姉妹は作った順。
-        // 最初の語学アプリは 2025年7月の Poly-Lang（ledger と polylinga.origin）。ここでは ことのあめ の前の版。
-        { work: "polylinga", date: "2025-12-19", role: t("前の版", "Earlier version", "이전 버전") },
+        // 初代の Poly-Lang は主な作品ではない（アイコンも作品のページもない）ので、点線の枠に mark の字を入れて、GitHub へつなぐ。
+        { name: "Poly-Lang", mark: "PL", href: "https://github.com/ryoda0314/poly-lang-app", date: "2025-07-24", role: t("初代の試作", "First prototype", "첫 프로토타입") },
+        { work: "polylinga", date: "2025-12-19", role: t("2代目", "Second version", "두 번째 버전") },
         { work: "kotonoame", date: "2026-10-03", role: t("作り直し", "The rebuild", "다시 만든 것") },
-        { work: "kotonooto", date: "2026-10-19", role: t("中国語の音", "Chinese sounds", "중국어 소리") },
-        { work: "kotonoha", date: "2026-10-21", role: t("英語", "English", "영어") },
-        { work: "kotonone", date: "2026-10-21", role: t("韓国語の漢字語", "Sino-Korean words", "한국어 한자어") },
-        { work: "kotonoeda", date: "2026-10-24", role: t("韓国語の上の語", "Korean honorifics", "한국어 높임말") },
+        { work: "kotonooto", date: "2026-10-19", role: t("中国語の音", "Chinese sounds", "중국어 소리"), sister: true },
+        { work: "kotonoha", date: "2026-10-21", role: t("英語", "English", "영어"), sister: true },
+        { work: "kotonone", date: "2026-10-21", role: t("韓国語の漢字語", "Sino-Korean words", "한국어 한자어"), sister: true },
+        { work: "kotonoeda", date: "2026-10-24", role: t("韓国語の上の語", "Korean honorifics", "한국어 높임말"), sister: true },
       ],
     },
     works: ["polylinga", "kotonoame", "kotonooto", "kotonoha", "kotonone", "kotonoeda"],
