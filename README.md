@@ -15,10 +15,12 @@
 - `assets/site.css` / `site.js` / `demos.js` … 見た目、動画と点の雨、4つのデモ（ことのあめ・ことのね・ことのえだ・ことのおと）
 - `assets/media/` `assets/audio/` `assets/img/` … 映像・音声・画像
 - `tools/sciencetokyo-day.py` … ScienceTokyo App の縦長の映像を作る（下の「素材の出どころ」）
+- `tools/og.mjs` … SNS で共有したときの画像 `assets/img/og.png` を `src/content.mjs` から作り直す（Chrome を使う）
 
 ## 直して書き出す
 
 ```bash
+node tools/og.mjs          # 共有の画像（名前・紹介・主な作品を変えたときだけ。ビルドより先に）
 node src/build.mjs         # 1枚の版
 node src/build-pages.mjs   # 階層の版（pages/）
 ```
@@ -60,6 +62,7 @@ ScienceTokyo App の初期テーマの淡い青と緑）にだけ出てくる。
 | `assets/audio/eda/*.mp3` | ことのえだ（`Desktop/keigo`）の `public/audio` から、上げてみる「ご飯、食べた？」（`src/content/rains.ts` の eat-a）の8本。わたしは女声（Leda）、返事はそれぞれの人の声。名前は `content/audio.json` の対応で付け替えた |
 | `assets/img/kotonoeda.png` | ことのえだ の `public/icons/icon-512.png`（本人が選んだ絵）を 112px に縮めたもの |
 | `assets/img/*.png` | 各アプリのアイコン、ことのあめ の芽の絵 |
+| `assets/img/og.png` | `tools/og.mjs` が `src/content.mjs` の名前・紹介・主な作品（アイコン・ひとこと・状態）から作る（1200×630） |
 | ことのえだ のデモの文と印（`src/content.mjs` の `demos.eda`） | ことのえだ の `src/content/rains.ts`（eat-a の4段）と `branches.ts` の語の高さ（上の語・ふだんの語・-시-）を写したもの。見た目は `climb.module.css`・`line.module.css`・`globals.css` から |
 | ことのね のデモの語と字（`src/content.mjs` の `demos.ne`） | ことのね の `public/data/words.json`・`hanja-chars.json` から 學・生・大・校 とその5語を写したもの。芽と根の絵はアプリの `Sprout.tsx` と同じ形 |
 
