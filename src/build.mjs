@@ -12,7 +12,7 @@ function render(L) {
   const { tx, ext, status, monthLabel, stats, sceneHead, more, media, links } = K;
 
   // 横長の映像は横幅いっぱいに（ことのは）。デモとスマホの画面は文章の横に、左右を入れ替えながら。
-  // 画面のない作品（PolyLinga）は、見出しと文章だけの短い行にする。
+  // 画面のない作品（PolyLinga）は、見出しと文章だけの短い行にする。「詳しく見る」はその下に。
   const FILM = new Set(["kotonoha"]);
   let sideFlip = false;
   function scene(id) {
@@ -25,6 +25,7 @@ function render(L) {
         ${stats(w)}
         ${links(w.links)}
       </div>
+      ${more(w)}
     </article>`;
     }
     if (FILM.has(id)) {

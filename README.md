@@ -11,7 +11,7 @@
 - `src/build-pages.mjs` … 階層の版の書き出し（`pages/`。`assets/` も `pages/assets/` に写すので、`pages/` だけで公開できる）
 - `src/kit.mjs` … 2つの版が共通に使う部品（見出し・メディア・デモ・点の雨・連絡など）
 - `src/oto-lines.json` … ことのおと のデモで描く高さの線（アプリの `public/data/f/t23.json` から8語分）
-- `src/timeline.json` … ヒーローの「作ってきたもの」の点（84件）。vault の作品ノート81件の始めた月・状態に、ことのは・ことのおと・ことのえだ を足したもの。個人的なものと仕事のもの6件は名前を伏せている
+- `src/timeline.json` … ヒーローの「作ってきたもの」の点（99件）。vault の作品ノート81件の始めた月・状態に、ことのは・ことのおと・ことのえだ と、この PC（Windows）のフォルダから見つけた15件（下の「この PC から足したもの」）を足したもの。個人的なものと仕事のもの6件は名前を伏せている。点の雨の範囲は `src/kit.mjs` の `CHART_FROM`・`CHART_TO`（いまは 2025-07〜2026-10）で、列の数は月の数から決まる
 - `assets/site.css` / `site.js` / `demos.js` … 見た目、動画と点の雨、4つのデモ（ことのあめ・ことのね・ことのえだ・ことのおと）
 - `assets/media/` `assets/audio/` `assets/img/` … 映像・音声・画像
 - `tools/sciencetokyo-day.py` … ScienceTokyo App の縦長の映像を作る（下の「素材の出どころ」）
@@ -65,9 +65,35 @@ ScienceTokyo App の初期テーマの淡い青と緑）にだけ出てくる。
 
 ことのは のポスターは33秒のフレーム。
 
+## この PC から足したもの
+
+vault にない 2025年7〜12月のものを、この PC（Windows）のフォルダから足した（2026-10-25）。日付は git のコミット（日本時間）、git がないものはファイルの作成日。
+
+| 足したもの | 出る所 | 元のフォルダ | 日付 |
+|---|---|---|---|
+| Poly-Lang | 点（2025-07）、ほかの作品の行、PolyLinga の「作った理由」「概要」、年表 | `~/poly-lang-app`（GitHub は poly-lang-app、旧名 my-langapp）、`OneDrive/デスクトップ/app`（企画書・`要件定義/めも.docx`・`プレゼンテーション/メモ.docx`） | 要件定義と最初のコミットが 2025-07-24 |
+| 動詞活用テスト（スペイン語）、語学学習日記、11進数計算機 | 点（2025-07） | `OneDrive/デスクトップ/web`・`testet` | 2025-07-16〜22 |
+| 自作問題・改題集 | 点（2025-09） | `OneDrive/デスクトップ/自作問題集` | 2025-09-11 |
+| 場合の数・確率の「36ページから50ページまで」 | ほかの作品の行の文 | `OneDrive/デスクトップ/東工大/場合の数確率の参考書(りょだ作).pdf`（初版）、`趣味/場合の数・確率/場合の数・確率を極めたい.pdf` | 2024-06-24（36ページ）、2025-09-10（50ページ） |
+| Programming Boot Camp | 年表（2025-11） | `~/isct-pbc-2025`（講座のリポジトリのフォーク。本人のコミットはない） | 講座は 10/25・11/08・11/15（Claude Code）・11/29 |
+| Pet Park 3D、マインドマップ思考整理、AIおふろ代行サービス、LocationSNS、Seoul-JP Life Mirror | 点（2025-11） | `~/isct2025-learning-phase3`・`~/new-app-1`・`~/newapp2`・`~/newapp3`・`~/seoul-jp_app`（どれも git なし） | 2025-11-15〜22 |
+| sampo | 点（2025-11）、ほかの作品の行 | `OneDrive/デスクトップ/sampo`・`散歩/企画` | 企画書 11/24、コミット 11/30〜12/01 |
+| AI Daily | 点（2025-12）、ほかの作品の行 | `OneDrive/デスクトップ/anti-test`（GitHub は news） | 2025-12-02〜03 |
+| SwaLo | 点（2025-12）、ほかの作品の行、ScienceTokyo App の「前に作ったもの」、年表 | `OneDrive/デスクトップ/campus-app`（12/30 までの名前は Campus Club） | 2025-12-04〜31、73コミット |
+| Pronunciation Evaluator | 点（2025-12）、PolyLinga の「工夫したこと」 | `OneDrive/デスクトップ/アプリ製作/pronunciation` | 2025-12-13〜20 |
+| 例文を見比べる試作 | PolyLinga の「工夫したこと」 | `OneDrive/デスクトップ/アプリ製作/poly-lang-app-pbc` | 2025-12-19 23:22〜12-20 00:36 |
+| AI Trends Now | 点（2025-12） | `OneDrive/デスクトップ/ai_news_app` | 2025-12-13〜14 |
+| tutoring-app の点を 2026-01 から 2025-12 へ | 点 | `OneDrive/デスクトップ/アプリ製作/tutoring-app` | 最初のコミット 2025-12-06（GitHub の main は 2026-01-17 に作り直されている） |
+| PolyLinga の名前の変更 | PolyLinga の「概要」、年表 | GitHub poly-lang の 60d93ef（`layout.tsx` の title） | 2026-01-28 |
+
 ## 載せていないもの
 
 - ことのは・ことのおと のアプリ本体へのリンク：ことのは の README にある「公開前に AI の回数をアカウント単位で数える」が済んでいないため。GitHub とページ内のデモ・映像だけ
 - ScienceTokyo App の GitHub：学内アカウントを扱うアプリなので、コードへの導線は置いていない
 - bus、timetable：身近な人のために作ったものなので外した
 - METAL の会社名と展示の予定
+- tutoring-app（Tutorin）の行と URL：実際の家庭教師の仕事と、その家庭のためのものなので、点だけ
+- SwaLo の公開 URL：いまは別のアプリが出るので、GitHub だけ
+- Emotion English（`アプリ製作/english-app`、2025-12）：vault の点「english」と同じものとみて、点は足していない
+- Programming Boot Camp の演習そのものと、授業の課題（機械製図の Inventor、機械系基礎実験のレポート、M5Atom・Arduino の工作、C++ の数値計算）。Pet Park 3D だけは、演習に自分で3Dの公園を足したので点にした
+- 2025年7月より前のもの（2024年の数学のノート、Blender など）：点の雨の範囲の外。場合の数・確率の教材だけ、行の文に初版の年月を書いた

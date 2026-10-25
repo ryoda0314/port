@@ -3,7 +3,7 @@
 // 部品は 1枚の版（src/build.mjs）と同じ src/kit.mjs。assets/ は pages/assets/ に写す（pages/ だけで公開できるように）。
 //
 //   pages/index.html                 トップ：名前と紹介、点の雨、主な作品の札、ほかの作品から少し、連絡
-//   pages/works/index.html           作品：主な作品7つと、ほかの作品22件（分類で絞り込む）
+//   pages/works/index.html           作品：主な作品7つと、ほかの作品26件（分類で絞り込む）
 //   pages/works/<id>/index.html      作品ごと：見出し・画面・数字、作った理由、工夫したこと、概要、使った技術、姉妹、前後の作品
 //   pages/about/index.html           経歴：所属と年表、作り方、よく使う道具
 //   pages/en/…、pages/ko/…           同じ形で英語・韓国語

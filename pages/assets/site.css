@@ -153,9 +153,10 @@ img { max-width: 100%; }
 .t-making { background: var(--ink); }
 .t-resting { background: var(--dot-rest); }
 .rc-plot { position: relative; }
-/* The sky the dots fall from: anything above it is hidden, so each dot appears at the top and drops into place. */
-.rc-sky { overflow: hidden; padding-top: 28px; }
-.rc-cols { list-style: none; display: grid; grid-template-columns: repeat(15, minmax(0, 1fr)); align-items: end; margin: 0; padding: 0; }
+/* The sky the dots fall from: anything above it is hidden, so each dot appears at the top and drops into place.
+   Only the top and bottom are cut, so the year under the first month may run past the left edge. */
+.rc-sky { overflow: hidden; overflow: visible clip; padding-top: 28px; }
+.rc-cols { list-style: none; display: grid; grid-template-columns: repeat(var(--cols, 16), minmax(0, 1fr)); align-items: end; margin: 0; padding: 0; }
 .rc-col { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; min-width: 0; }
 .rc-n { min-height: 18px; margin-bottom: 6px; font-size: 12px; font-weight: 600; color: var(--muted); font-variant-numeric: tabular-nums; }
 .rc-stack { display: flex; flex-direction: column-reverse; align-items: center; gap: 5px; padding-bottom: 10px; }
@@ -260,7 +261,9 @@ img { max-width: 100%; }
 
 /* A work with no screen to show: the headline on one side, the words on the other, one short row. */
 .scene-compact { display: grid; gap: 28px; }
-@media (min-width: 1000px) { .scene-compact { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 80px; align-items: start; } }
+@media (min-width: 1000px) { .scene-compact { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 28px 80px; align-items: start; } }
+/* Its "More detail" runs under both columns. */
+.scene-compact > .scene-more { grid-column: 1 / -1; margin-top: 12px; }
 
 /* Split: words on one side, the working screen on the other; the sides swap from scene to scene. */
 .scene-grid { display: grid; gap: 44px; }

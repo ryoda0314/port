@@ -7,9 +7,10 @@ import * as C from "./content.mjs";
 
 export const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 export const OTO_LINES = JSON.parse(readFileSync(join(ROOT, "src", "oto-lines.json"), "utf8"));
-// 作ってきたもの（点ひとつが作品ひとつ）。vault の作品ノートと、その後の ことのは・ことのおと。
+// 作ってきたもの（点ひとつが作品ひとつ）。vault の作品ノートと、その後の ことのは・ことのおと・ことのえだ、この PC のフォルダから足したもの。
 export const TIMELINE = JSON.parse(readFileSync(join(ROOT, "src", "timeline.json"), "utf8"));
-const CHART_FROM = "2025-08";
+// 最初の点は 2025年7月（韓国語を始めた月の、手作りの道具と Poly-Lang）。列の数は月の数から決まる（CSS の --cols）。
+const CHART_FROM = "2025-07";
 const CHART_TO = "2026-10";
 
 export const PAGES = {
@@ -272,7 +273,7 @@ ${script}`.replace(/\n{2,}/g, "\n");
       <ul class="rc-legend">${legend}</ul>
     </div>
     <div class="rc-plot">
-      <div class="rc-sky"><ol class="rc-cols">${cols}</ol></div>
+      <div class="rc-sky"><ol class="rc-cols" style="--cols:${months.length}">${cols}</ol></div>
       <div class="rc-tip" aria-hidden="true" hidden><span class="rc-tip-name"></span><span class="rc-tip-meta"></span></div>
     </div>
     <p class="sr-only">${esc(tx(C.chart.summary))}: ${esc(summary)}</p>

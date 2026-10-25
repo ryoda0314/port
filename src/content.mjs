@@ -77,9 +77,9 @@ export const ui = {
     mainWorks: t("主な作品", "Main work", "주요 작품"),
     allWorks: t("すべての作品", "All work", "모든 작품"),
     worksLead: t(
-      "主な作品7つと、ほかに作ったものから22件。期間と状態は2026年10月時点。名前だけなら、トップの点に触れると全部出る。",
-      "Seven main works and 22 others. Periods and status as of October 2026. Every name appears when you point at the dots on the top page.",
-      "주요 작품 7개와, 그 밖에 만든 것 중 22건. 기간과 상태는 2026년 10월 기준. 이름만이라면 첫 페이지의 점에 손을 대면 전부 나온다."
+      "主な作品7つと、ほかに作ったものから26件。期間と状態は2026年10月時点。名前だけなら、トップの点に触れると全部出る。",
+      "Seven main works and 26 others. Periods and status as of October 2026. Every name appears when you point at the dots on the top page.",
+      "주요 작품 7개와, 그 밖에 만든 것 중 26건. 기간과 상태는 2026년 10월 기준. 이름만이라면 첫 페이지의 점에 손을 대면 전부 나온다."
     ),
     origin: t("作った理由", "Why I made it", "만든 이유"),
     facts: t("概要", "At a glance", "개요"),
@@ -134,7 +134,8 @@ export const groups = [
     lineage: {
       steps: [
         // 日付は作り始めた日（日本時間）。各フォルダで最初に作り始めた会話と、git の最初のコミットから。姉妹は作った順。
-        { work: "polylinga", date: "2025-12-19", role: t("最初の版", "First version", "첫 버전") },
+        // 最初の語学アプリは 2025年7月の Poly-Lang（ledger と polylinga.origin）。ここでは ことのあめ の前の版。
+        { work: "polylinga", date: "2025-12-19", role: t("前の版", "Earlier version", "이전 버전") },
         { work: "kotonoame", date: "2026-10-03", role: t("作り直し", "The rebuild", "다시 만든 것") },
         { work: "kotonooto", date: "2026-10-19", role: t("中国語の音", "Chinese sounds", "중국어 소리") },
         { work: "kotonoha", date: "2026-10-21", role: t("英語", "English", "영어") },
@@ -190,6 +191,15 @@ export const works = {
           "メッセージ機能のため、電気通信事業を届け出た（2026年5月受理）",
           "Registered as a telecommunications business because of its messaging (accepted May 2026)",
           "메시지 기능 때문에 전기통신사업을 신고했다(2026년 5월 수리)"
+        ),
+      ],
+      // campus-app（2025-12-04〜31）。コードは引き継いでいない。
+      [
+        t("前に作ったもの", "Built before it", "이전에 만든 것"),
+        t(
+          "2025年12月の、大学のメールで入る学内 SNS「SwaLo」（73コミット）。チャットと DM、学内の居場所の共有を、ここで先に作った",
+          "SwaLo, a campus social network joined with a university email, in December 2025 (73 commits). Chat, DMs and sharing where you are on campus were built there first",
+          "2025년 12월의, 대학 메일로 가입하는 교내 SNS 'SwaLo'(73커밋). 채팅과 DM, 교내 위치 공유를 여기서 먼저 만들었다"
         ),
       ],
     ],
@@ -268,6 +278,36 @@ export const works = {
       "A PWA for learning by comparing similar sentences and noticing the shared part yourself, backed by AI correction and native-speaker audio. It teaches 8 languages, with the interface in 11. I'm now rebuilding it as Kotonoame.",
       "비슷한 예문을 비교해 공통점을 스스로 알아차리는 학습을 AI 첨삭과 원어민 음성으로 돕는 PWA. 8개 언어를 배울 수 있고, 화면은 11개 언어. 지금은 ことのあめ로 다시 만들고 있다."
     ),
+    // 前の版 Poly-Lang の企画（Desktop/app の 要件定義/めも.docx、2025-07-24）と、その夏のメモ（プレゼンテーション/メモ.docx）から。
+    origin: t(
+      "最初の形は、韓国語を始めた2025年7月の Poly-Lang。7月24日の1日で、企画書と要件定義を書いた。その夏のメモには、母語を覚える流れ（インプット → 分析 → 応用 → 修正 → 繰り返し）を大人がまねる、とある。30ほどのフレーズを眺めて規則に気づき、短い文を自分で作り、AI に直された文と見比べる。忘れても、また作って直してもらえばいい。それを12月に作り直したのが PolyLinga。",
+      "Its first form was Poly-Lang, in July 2025, the month I started Korean: on the 24th I wrote its plan and requirements in a single day. A memo from that summer says adults can copy the way we learn our first language: input, analysis, use, correction, repeat. Look over about 30 phrases and notice the rules, make short sentences yourself, and compare them with the AI's corrections. If you forget, make the sentence again and have it corrected again. PolyLinga is what I rebuilt from it in December.",
+      "처음 모습은 한국어를 시작한 2025년 7월의 Poly-Lang이다. 7월 24일 하루 만에 기획서와 요구 사항 정의를 썼다. 그해 여름의 메모에는 모어를 익히는 흐름(인풋 → 분석 → 응용 → 수정 → 반복)을 어른이 따라 한다고 적혀 있다. 30개쯤의 문장을 훑어보며 규칙을 알아차리고, 짧은 문장을 직접 만들어, AI가 고친 문장과 비교한다. 잊어도 다시 만들어 고쳐 받으면 된다. 그것을 12월에 다시 만든 것이 PolyLinga다."
+    ),
+    // 見比べる画面は poly-lang-app-pbc（2025-12-19 夜）、発音は pronunciation（2025-12-13〜20）で先に試した。
+    points: [
+      t(
+        "似た例文を並べる画面は、作り直す直前の夜に、小さなアプリで先に試した。選んだ語を必ず含む例文だけを最大8文並べ、4文に満たなければ出さないことにした。",
+        "The screen that lines up similar sentences was tried first in a small app, the night before the rebuild. It showed only sentences that really contain the word you picked, up to eight, and nothing at all if there were fewer than four.",
+        "비슷한 예문을 늘어놓는 화면은 다시 만들기 직전 밤에 작은 앱으로 먼저 시험했다. 고른 단어가 반드시 들어간 예문만 최대 8개 늘어놓고, 4개가 안 되면 보여 주지 않기로 했다."
+      ),
+      t(
+        "発音の評価は、Whisper の書き起こしと手本の文字の差で測るやり方と、Azure の音素ごとの評価を、別のアプリで並べて比べてから入れた。",
+        "Before adding pronunciation scoring, I set two methods side by side in a separate app: Whisper's transcript compared letter by letter with the model sentence, and Azure's phoneme-level assessment.",
+        "발음 평가는 Whisper로 받아 적은 글과 본보기 문장의 차이로 재는 방식과, Azure의 음소 단위 평가를 별도의 앱에서 나란히 비교한 뒤에 넣었다."
+      ),
+    ],
+    facts: [
+      [
+        t("前の版", "Earlier version", "이전 버전"),
+        t(
+          "Poly-Lang（2025年7月〜12月）。17言語の基本フレーズ、AI の添削、読み上げ",
+          "Poly-Lang (July to December 2025): basic phrases in 17 languages, AI correction, read-aloud",
+          "Poly-Lang(2025년 7월~12월). 17개 언어의 기본 문장, AI 첨삭, 음성 읽기"
+        ),
+      ],
+      [t("名前", "Name", "이름"), t("2026年1月に Poly-Lang から PolyLinga へ", "Renamed from Poly-Lang to PolyLinga in January 2026", "2026년 1월에 Poly-Lang에서 PolyLinga로")],
+    ],
     tech: ["Next.js", "Supabase", "OpenAI API", "Gemini TTS", "Azure Speech", "Capacitor", "Stripe"],
     links: [{ label: t("GitHub", "GitHub", "GitHub"), href: "https://github.com/ryoda0314/poly-lang" }],
   },
@@ -623,6 +663,32 @@ export const ledger = [
       "일본의 '연 수입의 벽'으로 실수령액이 어떻게 바뀌는지 2026년 제도로 계산한다. 제도 수치는 1차 자료와 대조했다."
     ),
   },
+  // ここから4件（SwaLo・Poly-Lang・sampo・AI Daily）は、この PC（Windows）のフォルダから足したもの。
+  // SwaLo の公開 URL はいま別のアプリが出るので、GitHub だけ。
+  {
+    cat: "campus",
+    name: t("SwaLo", "SwaLo", "SwaLo"),
+    period: "2025-12",
+    status: "paused",
+    about: t(
+      "大学のメールで入る、東京科学大学の学生向けの SNS。チャットの4言語翻訳、AI ニュースの毎朝の要約、学内の建物の階ごとの居場所共有まで作った。ScienceTokyo App の3か月前。",
+      "A social network for Science Tokyo students, joined with a university email. It got as far as chat translation into four languages, a morning AI news digest, and sharing which floor of which campus building you're on. Three months before ScienceTokyo App.",
+      "대학 메일로 가입하는 도쿄과학대학 학생용 SNS. 채팅의 4개 언어 번역, 매일 아침 AI 뉴스 요약, 교내 건물의 층별 위치 공유까지 만들었다. ScienceTokyo App보다 3개월 앞서."
+    ),
+    links: [gh("campus-app")],
+  },
+  {
+    cat: "lang",
+    name: t("Poly-Lang", "Poly-Lang", "Poly-Lang"),
+    period: "2025-07 〜 12",
+    status: "paused",
+    about: t(
+      "最初の語学アプリ。韓国語を始めた月に、企画書と要件定義を1日で書いて作り始めた。17言語の基本フレーズを音声つきで眺め、自分で作った文を AI に直してもらう。12月に PolyLinga として作り直した。",
+      "My first language app, started the month I began Korean, with its plan and requirements written in a single day. You look over basic phrases in 17 languages with audio, and an AI corrects sentences you make yourself. In December I rebuilt it as PolyLinga.",
+      "첫 어학 앱. 한국어를 시작한 달에 기획서와 요구 사항 정의를 하루 만에 쓰고 만들기 시작했다. 17개 언어의 기본 문장을 음성과 함께 훑어보고, 직접 만든 문장을 AI에게 고쳐 받는다. 12월에 PolyLinga로 다시 만들었다."
+    ),
+    links: [gh("poly-lang-app")],
+  },
   {
     cat: "lang",
     name: t("Wordtock", "Wordtock", "Wordtock"),
@@ -708,10 +774,11 @@ export const ledger = [
     name: t("場合の数・確率を極めたい", "Mastering Counting & Probability", "경우의 수·확률 정복"),
     period: "2025-09 〜",
     status: "dev",
+    // 教材の PDF は 2024-06-24 の初版36ページ（東工大/場合の数確率の参考書(りょだ作).pdf）から、2025-09-10 の版で50ページ。
     about: t(
-      "受験のときにまとめたものを、後輩向けの LaTeX 教材と解説動画にしている。",
-      "Turning my exam-prep notes into LaTeX materials and explainer videos for younger students.",
-      "수험 때 정리한 것을 후배용 LaTeX 교재와 해설 영상으로 만들고 있다."
+      "受験のときにまとめたものを、後輩向けの LaTeX 教材と解説動画にしている。教材は2024年6月の初版36ページから、50ページまで書き足した。",
+      "Turning my exam-prep notes into LaTeX materials and explainer videos for younger students. The material has grown from a 36-page first edition in June 2024 to 50 pages.",
+      "수험 때 정리한 것을 후배용 LaTeX 교재와 해설 영상으로 만들고 있다. 교재는 2024년 6월의 초판 36쪽에서 50쪽까지 늘렸다."
     ),
   },
   {
@@ -758,6 +825,30 @@ export const ledger = [
       "Fourteen landing pages, mostly for fictional companies.",
       "가상 기업 등의 랜딩 페이지 14건."
     ),
+  },
+  {
+    cat: "tools",
+    name: t("sampo", "sampo", "sampo"),
+    period: "2025-11 〜 12",
+    status: "paused",
+    about: t(
+      "散歩の SNS。歩いた道を GPS で記録し、地図を約250m四方のマスに分けて、歩いて通ったマスを数える。企画書を書いてから約1週間で公開した。",
+      "A social network for walks. It records your route by GPS, divides the map into squares about 250 m across, and counts the squares you've walked through. Published about a week after I wrote its plan.",
+      "산책 SNS. 걸은 길을 GPS로 기록하고, 지도를 약 250m 사방의 칸으로 나눠 걸어서 지나간 칸을 센다. 기획서를 쓰고 약 1주일 만에 공개했다."
+    ),
+    links: [{ label: t("開く", "Open", "열기"), href: "https://sampoapp.vercel.app" }, gh("sampo")],
+  },
+  {
+    cat: "tools",
+    name: t("AI Daily", "AI Daily", "AI Daily"),
+    period: "2025-12",
+    status: "done",
+    about: t(
+      "生成 AI のニュースをまとめる。AI 企業のブログとニュースサイトの RSS 9本を集め、重要度の点数で並べて、AI が要約する。一晩で作って公開した。",
+      "Generative AI news in one place: it gathers nine RSS feeds from AI companies' blogs and news sites, ranks the posts by an importance score, and has an AI summarize them. Built and published in one night.",
+      "생성 AI 뉴스를 모은다. AI 기업 블로그와 뉴스 사이트의 RSS 9개를 모아 중요도 점수로 늘어놓고, AI가 요약한다. 하룻밤에 만들어 공개했다."
+    ),
+    links: [{ label: t("開く", "Open", "열기"), href: "https://news-chi-roan.vercel.app" }, gh("news")],
   },
   {
     pick: true,
@@ -846,9 +937,10 @@ export const sections = {
   },
 };
 
-// ヒーローの「作ってきたもの」：点ひとつが作品ひとつ（src/timeline.json。vault の作品ノート81件と、その後の ことのは・ことのおと）。
+// ヒーローの「作ってきたもの」：点ひとつが作品ひとつ（src/timeline.json。vault の作品ノート81件と、その後の ことのは・ことのおと・ことのえだ、
+// この PC のフォルダから足した15件）。範囲は src/kit.mjs の CHART_FROM・CHART_TO。
 export const chart = {
-  label: t("2025年8月から作ってきたもの", "Things I've made since August 2025", "2025년 8월부터 만든 것"),
+  label: t("2025年7月から作ってきたもの", "Things I've made since July 2025", "2025년 7월부터 만든 것"),
   note: t(
     "点ひとつが、作品ひとつ。始めた月に積もる。アイコンは主な作品。触れると名前が出る。",
     "One dot, one project, stacked in the month it began. Icons mark the main work. Point at a dot to see its name.",
@@ -929,9 +1021,26 @@ export const about = {
   ],
   timelineTitle: t("これまで", "So far", "지금까지"),
   timeline: [
-    ["2025-07", t("韓国語をほぼゼロから始める", "Start Korean from almost zero", "한국어를 거의 처음부터 시작")],
+    [
+      "2025-07",
+      t(
+        "韓国語をほぼゼロから始める。同じ月に、最初の語学アプリ Poly-Lang の企画書と要件定義を1日で書き、作り始める",
+        "Start Korean from almost zero. The same month, write the plan and requirements for my first language app, Poly-Lang, in a single day, and start building it",
+        "한국어를 거의 처음부터 시작. 같은 달에 첫 어학 앱 Poly-Lang의 기획서와 요구 사항 정의를 하루 만에 쓰고 만들기 시작"
+      ),
+    ],
     ["2025-08", t("Unity を始める。のちの METAL になる", "Start Unity; it later becomes METAL", "Unity 시작. 나중에 METAL이 된다")],
-    ["2025-12", t("PolyLinga を作り始める", "Start building PolyLinga", "PolyLinga를 만들기 시작"), "more"],
+    // 講座は 10/25・11/08・11/15（Claude Code）・11/29。11/16 から new-app-1 ほかを作っている（このPCのフォルダの作成日）。
+    [
+      "2025-11",
+      t(
+        "東京科学大学の Programming Boot Camp（全4回）を受講する。Claude Code を使う回の翌日から、小さなアプリを次々に作りはじめる",
+        "Take Science Tokyo's Programming Boot Camp (four sessions). From the day after the Claude Code session, start building small apps one after another",
+        "도쿄과학대학의 Programming Boot Camp(전 4회)를 수강. Claude Code를 쓰는 회차 다음 날부터 작은 앱을 잇달아 만들기 시작"
+      ),
+    ],
+    ["2025-12", t("東京科学大学の学生向けの SNS「SwaLo」を作る", "Build SwaLo, a social network for Science Tokyo students", "도쿄과학대학 학생용 SNS 'SwaLo'를 만든다"), "more"],
+    ["2025-12", t("Poly-Lang を作り直しはじめる。翌月、名前を PolyLinga にする", "Start rebuilding Poly-Lang; the next month it's renamed PolyLinga", "Poly-Lang을 다시 만들기 시작. 다음 달 이름을 PolyLinga로 바꾼다"), "more"],
     ["2026-03", t("ScienceTokyo App を作り始める。この月だけで401コミット", "Start ScienceTokyo App, with 401 commits in that month alone", "ScienceTokyo App을 만들기 시작. 이달에만 401커밋")],
     ["2026-04", t("ScienceTokyo App を App Store に申請する。電気通信事業を届け出る（5月に受理）", "Submit ScienceTokyo App to the App Store; register as a telecommunications business (accepted in May)", "ScienceTokyo App을 App Store에 신청. 전기통신사업 신고(5월에 수리)")],
     ["2026-06", t("韓国語の漢字語を集める <span lang=\"ko\">한자 도감</span> を作る", "Build <span lang=\"ko\">한자 도감</span>, for collecting Sino-Korean words", "한국어 한자어를 모으는 한자 도감을 만든다"), "more"],
